@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Байланыс</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin: 20px 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .contact-info, .contact-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .contact-info a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form label {
+            font-size: 16px;
+            margin-bottom: 5px;
+            display: block;
+            color: #333;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .contact-form button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .contact-form button:hover {
+            background-color: #0056b3;
+        }
+
+        .success-message {
+            display: none;
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            text-align: center;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="contact-info">
+            <h2>Байланыс деректері</h2>
+            <p><strong>Телефон:</strong> <a href="tel:+77001234567">+7 (700) 123-45-67</a></p>
+            <p><strong>Электрондық пошта:</strong> <a href="mailto:info@mysite.kz">info@mysite.kz</a></p>
+            <p><strong>Мекенжай:</strong> Алматы қаласы, Абылай хан даңғылы, 58</p>
+        </div>
+
+        <div class="contact-form">
+            <h2>Хабарлама жіберу</h2>
+            <form id="contactForm">
+                <label for="name">Аты-жөні:</label>
+                <input type="text" id="name" name="name" placeholder="Атыңызды енгізіңіз" required>
+
+                <label for="email">Электрондық пошта:</label>
+                <input type="email" id="email" name="email" placeholder="Поштаңызды енгізіңіз" required>
+
+                <label for="message">Хабарлама:</label>
+                <textarea id="message" name="message" placeholder="Хабарламаңызды енгізіңіз" rows="5" required></textarea>
+
+                <button type="submit">Жіберу</button>
+            </form>
+            <div class="success-message" id="successMessage">
+                Хабарламаңыз сәтті жіберілді!
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Форма жіберілуін тоқтату
+            successMessage.style.display = 'block'; // Хабарламаны көрсету
+            form.reset(); // Форма өрістерін тазалау
+        });
+    </script>
+</body>
+</html>

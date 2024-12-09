@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кино тізімі</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #2a3d66;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .movie-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 200px;
+        }
+
+        .movie-card img {
+            width: 180px;
+            height: 270px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .movie-card h3 {
+            margin: 15px 0;
+            color: #333;
+        }
+
+        .movie-card p {
+            font-size: 14px;
+            color: #777;
+        }
+
+        .movie-card button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .movie-card button:hover {
+            background-color: #0056b3;
+        }
+
+        .movie-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Кино тізімі</h1>
+</header>
+
+<div class="container">
+    <div class="movie-list">
+        <!-- Фильмдер тізімі -->
+        <div class="movie-card">
+            <img src="https://avatars.mds.yandex.net/get-kinopoisk-image/1946459/b40cbbd7-b778-4197-a2f6-a3b5f84c0c9b/600x900" alt="Movie Poster">
+            <h3>Лок и ключ</h3>
+            <p>Американдық қорқынышты драмалық телехикая</p>
+            <button onclick="viewMovie(1)">Көру</button>
+        </div>
+
+        <div class="movie-card">
+            <img src="https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/916b927c-443e-4960-ab14-5d695aeb7682/600x900" alt="Movie Poster">
+            <h3>Сабрина</h3>
+            <p>Американдық қиял-ғажайып жіне драмалық телехикая</p>
+            <button onclick="viewMovie(2)">Көру</button>
+        </div>
+
+        <div class="movie-card">
+            <img src="https://avatars.mds.yandex.net/get-kinopoisk-image/1946459/47d962af-49f7-4456-b3b0-a32caca60455/300x450" alt="Movie Poster">
+            <h3>Колдовство:новый ритуал</h3>
+            <p>Фэнтези жанрындағы қорқынышты фильм</p>
+            <button onclick="viewMovie(3)">Көру</button>
+        </div>
+
+        <div class="movie-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqv853WncJlAUiOeEAcOtmnqKqNfIJzy1tMQ&s" alt="Movie Poster">
+            <h3>Ужасающий</h3>
+            <p>Американдық қорқынышты фильм</p>
+            <button onclick="viewMovie(4)">Көру</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function viewMovie(movieId) {
+        const movieUrls = {
+            1: 'https://hdrezka.ag/series/drama/33172-klyuchi-lokkov-2020.html', 
+            2: 'https://kinogo.fm/1596-ledenjaschie-dushu-prikljuchenija-sabriny-1-4-sezon.html', 
+            3: 'https://www.kinopoisk.ru/film/1044213/?utm_referrer=www.google.com',
+            4: 'https://kinogo.inc/films/21121-uzhasayuschiy.html' };
+
+        // Пайдаланушыны фильмнің толық бетіне бағыттау
+        window.location.href = movieUrls[movieId];
+    }
+</script>
+
+</body>
+</html>
